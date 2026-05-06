@@ -11,7 +11,6 @@ function init() {
   function loadVoices() {
     voices = speechSynthesis.getVoices();
 
-    // Clear the dropdown first
     voiceSelect.innerHTML = "";
 
     // Add default option
@@ -22,7 +21,7 @@ function init() {
     defaultOption.selected = true;
     voiceSelect.appendChild(defaultOption);
 
-    // Add each available voice
+    // add each available voice
     voices.forEach((voice, index) => {
       const option = document.createElement("option");
       option.value = index;
@@ -31,7 +30,7 @@ function init() {
     });
   }
 
-  // Load voices once
+  // Load voices ONCE
   loadVoices();
 
   // Some browsers load voices late, so this catches them when ready
